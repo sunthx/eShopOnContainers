@@ -11,7 +11,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
     [Authorize(AuthenticationSchemes = OpenIdConnectDefaults.AuthenticationScheme)]
     public class OrderController : Controller
     {
-        private IOrderingService _orderSvc;
+                                                         private IOrderingService _orderSvc;
         private IBasketService _basketSvc;
         private readonly IIdentityParser<ApplicationUser> _appUserParser;
         public OrderController(IOrderingService orderSvc, IBasketService basketSvc, IIdentityParser<ApplicationUser> appUserParser)

@@ -28,6 +28,7 @@ message OrderDraftDTO {
     double total = 1;
     repeated OrderItemDTO orderItems = 2;
 }
+
 message OrderItemDTO {
     int32 productId = 1;
     string productName = 2;

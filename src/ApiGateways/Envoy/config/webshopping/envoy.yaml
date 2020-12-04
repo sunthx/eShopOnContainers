@@ -101,7 +101,7 @@ static_resources:
               path: "/tmp/access.log"
   clusters:
   - name: shoppingagg
-    connect_timeout: 0.25s
+    connect_timeout: 10s
     type: strict_dns
     lb_policy: round_robin
     hosts:
@@ -109,7 +109,7 @@ static_resources:
         address: webshoppingagg
         port_value: 80
   - name: catalog
-    connect_timeout: 0.25s
+    connect_timeout: 10s
     type: strict_dns
     lb_policy: round_robin
     hosts:
@@ -117,7 +117,7 @@ static_resources:
         address: catalog-api
         port_value: 80
   - name: basket
-    connect_timeout: 0.25s
+    connect_timeout: 10s
     type: strict_dns
     lb_policy: round_robin
     hosts:
@@ -125,7 +125,7 @@ static_resources:
         address: basket-api
         port_value: 80
   - name: ordering
-    connect_timeout: 0.25s
+    connect_timeout: 10s
     type: strict_dns
     lb_policy: round_robin
     hosts:
@@ -133,7 +133,7 @@ static_resources:
         address: ordering-api
         port_value: 80
   - name: signalr-hub
-    connect_timeout: 0.25s
+    connect_timeout: 10s
     type: strict_dns
     lb_policy: round_robin
     hosts:

@@ -53,8 +53,17 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.Domain.AggregatesModel.O
             _isDraft = false;
         }
 
-        public Order(string userId, string userName, Address address, int cardTypeId, string cardNumber, string cardSecurityNumber,
-                string cardHolderName, DateTime cardExpiration, int? buyerId = null, int? paymentMethodId = null) : this()
+        public Order(
+            string userId, 
+            string userName, 
+            Address address, 
+            int cardTypeId, 
+            string cardNumber, 
+            string cardSecurityNumber,
+            string cardHolderName, 
+            DateTime cardExpiration, 
+            int? buyerId = null, 
+            int? paymentMethodId = null) : this()
         {
             _buyerId = buyerId;
             _paymentMethodId = paymentMethodId;

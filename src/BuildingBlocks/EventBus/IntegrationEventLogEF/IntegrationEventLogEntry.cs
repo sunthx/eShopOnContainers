@@ -24,6 +24,7 @@ namespace Microsoft.eShopOnContainers.BuildingBlocks.IntegrationEventLogEF
             TimesSent = 0;
             TransactionId = transactionId.ToString();
         }
+
         public Guid EventId { get; private set; }
         public string EventTypeName { get; private set; }
         [NotMapped]

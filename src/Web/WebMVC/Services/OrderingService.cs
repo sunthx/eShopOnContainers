@@ -49,7 +49,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.Services
 
 
 
-        async public Task CancelOrder(string orderId)
+        public async Task CancelOrder(string orderId)
         {
             var order = new OrderDTO()
             {

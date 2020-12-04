@@ -108,8 +108,9 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.API.Application.Commands
 
                     return result;
                 }
-                catch
+                catch(Exception exception)
                 {
+                    string exceptionMessage = exception.Message;
                     return default(R);
                 }
             }

@@ -159,16 +159,22 @@ namespace Microsoft.eShopOnContainers.Services.Identity.API
             // the coockies shold be expided from https, but in eShop, the internal comunicacion in aks and docker compose is http.
             // To avoid this problem, the policy of cookies shold be in Lax mode.
             app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = AspNetCore.Http.SameSiteMode.Lax });
+
             app.UseRouting();
+
+            // 路由
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapControllers();
+
                 endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
                 {
                     Predicate = _ => true,
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
                 });
+
+                // HealthChecks
                 endpoints.MapHealthChecks("/liveness", new HealthCheckOptions
                 {
                     Predicate = r => r.Name.Contains("self")
